@@ -2,12 +2,12 @@ module.exports ={};
 
 module.exports.authenticated = function(request, callback) {
 // retrieve the session information from the browser
-	var session = request.session.get('world_music_session');
+	var session = request.session.get('music_session');
 
 	//Check if session exists
 	if (!session) {
 		return callback({
-			"message": "Logged out",
+			"message": "Logged out cannot find cookie",
 			"authenticated": false
 		});
 		//return will terminal the rest of the program
@@ -30,3 +30,4 @@ module.exports.authenticated = function(request, callback) {
   });
     
 };
+

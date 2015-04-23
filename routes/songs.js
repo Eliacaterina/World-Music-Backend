@@ -6,11 +6,12 @@ server.route([
 		{
 			//get all songs from a specific country
 			method: 'GET',
-			path:'/songs',
+			path:'/songs/{country}',
 			handler: function(request, reply){
 				var db =request.server.plugins['hapi-mongodb'].db;
+				var country = encodeURIComponent(request.params.country)
 
-				db.collection('songs').find( { songs: [ "countries"] } ).toArray(function(err, songs) {
+				db.collection('songs').find( {country: country }).toArray(function(err, songs) {
 					if (err) { 
             return reply('Internal MongoDB error', err);
 				  }

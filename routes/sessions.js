@@ -42,7 +42,7 @@ exports.register = function(server, option, next) {
 
                 	//Store the Session information in the browser Cookie
                 	//Yar
-                	request.session.set( 'world_music_session', {
+                	request.session.set( 'music_session', {
                 		"session_key": randomKey,
                 		"user_id": userMongo._id
                 	});
@@ -69,7 +69,7 @@ exports.register = function(server, option, next) {
     },
     {
     	//logging out
-    	method: 'DELETE',
+    	method: 'DELETE', 
     	path: '/sessions',
     	handler: function(request, reply) {
     		//obtain the session
