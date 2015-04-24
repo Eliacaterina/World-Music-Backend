@@ -28,7 +28,7 @@ server.route([
 							db.collection('users').count(uniqUdrQuery, function(err, userExist){
 								//if user already exists
 								if (userExist) {
-									return reply('Error: Username already exist', err);
+									return reply({ok: false, msg: 'User is already registered. '});
 								}
 
 								//otherwise, create the user
