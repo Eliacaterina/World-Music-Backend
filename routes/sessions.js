@@ -73,7 +73,7 @@ exports.register = function(server, option, next) {
     	path: '/sessions',
     	handler: function(request, reply) {
     		//obtain the session
-				var session = request.session.get('world_music_session');
+				var session = request.session.get('music_session');
 
     		//initial db
     		var db = request.server.plugins['hapi-mongodb'].db

@@ -10,7 +10,7 @@ module.exports.authenticated = function(request, callback) {
 			"message": "Logged out cannot find cookie",
 			"authenticated": false
 		});
-		//return will terminal the rest of the program
+		// return will terminal the rest of the program
 	}
 
   var db = request.server.plugins['hapi-mongodb'].db;
